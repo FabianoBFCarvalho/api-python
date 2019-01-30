@@ -36,9 +36,8 @@ class AppTest(unittest.TestCase):
         property_key = Property(namespace="ac-abc123", address="Rua Alba").put()
 
         Deal(namespace='ac-abc123', value='500', title='deal title',
-             contact_id=contact_key.urlsafe(),
+             contact_id=contact_key,
+             property_id=property_key
              ).put()
         response = self.testapp.get('/deals')
-        print(response)
-
         self.assertEqual(json.loads(response.body)[0]['contact']['name'], 'Fabiano')

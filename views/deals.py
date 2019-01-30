@@ -1,9 +1,8 @@
 import json
 
 from controller.base_request import BaseRequest
-from models.contact import Contact
 from models.deal import Deal
-from models.property import Property
+
 
 class Deals(BaseRequest):
 
@@ -20,17 +19,18 @@ class Deals(BaseRequest):
             contact_response = self.prepare_contact(deal.contact_id)
             property_response = self.prepare_property(deal.property_id)
             deal_json = {
-                'db_id': deal.key.id(),
+                'db_id': deal.key.urlsafe(),
                 'value': deal.value,
                 'interest': deal.interest,
                 'title': deal.title,
                 'status': deal.status,
             }
             if contact_response:
-                deal_json['contact'] = {'db_id': deal.contact_id, 'name': contact_response.name}
+                print(contact_response)
+                deal_json['contact'] = {'db_id': deal.contact_id.urlsafe(), 'name': contact_response.name}
 
             if property_response:
-                deal_json['property'] = {'db_id': deal.property_id, 'address': property_response.address}
+                deal_json['property'] = {'db_id': deal.property_id.urlsafe(), 'address': property_response.address}
 
             deals.append(deal_json)
 
@@ -45,10 +45,9 @@ class Deals(BaseRequest):
         else:
             return False
 
-
     @staticmethod
-    def prepare_property(property_id):
-        if property_id:
-            return property_id.get()
+    def prepare_property(property_key):
+        if property_key:
+            return property_key.get()
         else:
             return False

@@ -2,7 +2,7 @@ from google.appengine.ext import ndb
 
 
 class Property(ndb.Model):
-    db_id = ndb.KeyProperty()
+    db_id = ndb.StringProperty(indexed=False)
     description = ndb.StringProperty(indexed=False)
     site = ndb.StringProperty(indexed=False)
     address = ndb.StringProperty(indexed=False)

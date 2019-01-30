@@ -5,7 +5,6 @@ import unittest
 import json
 from views.property import PropertyHandler
 from models.property import Property
-import time
 
 
 class AppTest(unittest.TestCase):

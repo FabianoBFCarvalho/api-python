@@ -1,4 +1,5 @@
 import json
+from google.appengine.ext import ndb
 
 from controller.base_request import BaseRequest
 from models.contact import Contact
@@ -19,12 +20,24 @@ class Contacts(BaseRequest):
 
         for contact in Contact.query(namespace='ac-abc123').fetch():
             # self.count_deals(contact.key.id())
-            contact.key = contact.key.url_safe()
+            contact.db_id = contact.key.urlsafe()
             contact.amount_deals = 2
             contacts.append(contact.to_dict())
 
         self.response_write(contacts)
         # self.response.write(json.dumps([p.to_dict() for p in Property.query(namespace='ac-abc123').fetch()]))
+
+    def put(self, contact_id):
+        contact = ndb.Key(urlsafe=contact_id).get()
+        contact_json = json.loads(self.request.body)['contact']
+        Contact.prepare_contact(contact, contact_json).put()
+
+        self.response_write('Success')
+
+    def delete(self, contact_id):
+        contact = ndb.Key(urlsafe=contact_id).get()
+        contact.key.delete()
+        self.response_write('Success')
 
     # @staticmethod
     # def count_deals(contact_id):

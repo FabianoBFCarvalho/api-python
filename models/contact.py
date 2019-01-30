@@ -2,7 +2,7 @@ from google.appengine.ext import ndb
 
 
 class Contact(ndb.Model):
-    db_id = ndb.KeyProperty()
+    db_id = ndb.StringProperty(indexed=False)
     name = ndb.StringProperty(indexed=False)
     email = ndb.StringProperty(indexed=False)
     phone = ndb.StringProperty(indexed=False)

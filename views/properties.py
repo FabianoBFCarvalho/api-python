@@ -16,7 +16,7 @@ class Properties(BaseRequest):
     def get(self):
         properties = []
         for prop in Property.query(namespace='ac-abc123').fetch():
-            prop.db_id = prop.key.id()
+            prop.db_id = prop.key.urlsafe()
             properties.append(prop.to_dict())
 
         self.response_write(properties)
