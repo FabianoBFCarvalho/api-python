@@ -6,36 +6,48 @@ from models.deal import Deal
 
 class Deals(BaseRequest):
 
-    def post(self):
+    def post(self, deal_id):
         deal_json = json.loads(self.request.body)['deal']
         deal_new = Deal(namespace='ac-abc123')
         deal_key = Deal.prepare_deal(deal_new, deal_json).put()
 
-        self.response_write({'db_id': deal_key.id()})
+        self.response_write({'db_id': deal_key.urlsafe()})
 
-    def get(self, ):
-        deals = []
-        for deal in Deal.query(namespace='ac-abc123').fetch():
-            contact_response = self.prepare_contact(deal.contact_id)
-            property_response = self.prepare_property(deal.property_id)
-            deal_json = {
-                'db_id': deal.key.urlsafe(),
-                'value': deal.value,
-                'interest': deal.interest,
-                'title': deal.title,
-                'status': deal.status,
-            }
-            if contact_response:
-                print(contact_response)
-                deal_json['contact'] = {'db_id': deal.contact_id.urlsafe(), 'name': contact_response.name}
+    def get(self, deal_id=None):
+        if deal_id:
+            self.response_write(Deal.get_deal(deal_id))
+        else:
+            deals = []
+            for deal in Deal.query(namespace='ac-abc123').fetch():
+                contact_response = self.prepare_contact(deal.contact_id)
+                property_response = self.prepare_property(deal.property_id)
+                deal_json = {
+                    'db_id': deal.key.urlsafe(),
+                    'value': deal.value,
+                    'interest': deal.interest,
+                    'title': deal.title,
+                    'status': deal.status,
+                }
+                if contact_response:
+                    deal_json['contact'] = {'db_id': deal.contact_id.urlsafe(), 'name': contact_response.name}
 
-            if property_response:
-                deal_json['property'] = {'db_id': deal.property_id.urlsafe(), 'address': property_response.address}
+                if property_response:
+                    deal_json['property'] = {'db_id': deal.property_id.urlsafe(), 'address': property_response.address}
 
-            deals.append(deal_json)
+                deals.append(deal_json)
+            self.response_write(deals)
 
-        self.response_write(deals)
-        # self.response.write(json.dumps([p.to_dict() for p in Property.query(namespace='ac-abc123').fetch()]))
+    def put(self, deal_id):
+        deal = Deal.get_deal(deal_id)
+        deal_json = json.loads(self.request.body)['deal']
+        Deal.prepare_deal(deal, deal_json).put()
+
+        self.response_write('Success')
+
+    def delete(self, deal_id):
+        deal = Deal.get_deal(deal_id)
+        deal.key.delete()
+        self.response_write('Success')
 
     @staticmethod
     def prepare_contact(contact_key):

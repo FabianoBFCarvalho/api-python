@@ -23,3 +23,7 @@ class Deal(ndb.Model):
         deal_new.property_id = ndb.Key(urlsafe=deal_json.get('property_id'))
 
         return deal_new
+
+    @staticmethod
+    def get_deal(deal_id):
+        return ndb.Key(urlsafe=deal_id).get()

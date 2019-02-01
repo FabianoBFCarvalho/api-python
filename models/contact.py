@@ -17,3 +17,7 @@ class Contact(ndb.Model):
         contact_new.amount_deals = 2
         contact_new.tags = 'owner'
         return contact_new
+
+    @staticmethod
+    def get_contact(contact_id):
+        return ndb.Key(urlsafe=contact_id).get()

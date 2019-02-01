@@ -20,3 +20,6 @@ class Property(ndb.Model):
         property_new.address = property_json.get('address')
         return property_new
 
+    @staticmethod
+    def get_property(property_id):
+        return ndb.Key(urlsafe=property_id).get()
