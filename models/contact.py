@@ -1,13 +1,14 @@
 from google.appengine.ext import ndb
+from google.appengine.api import search
 
 
 class Contact(ndb.Model):
     db_id = ndb.StringProperty(indexed=False)
-    name = ndb.StringProperty(indexed=False)
-    email = ndb.StringProperty(indexed=False)
-    phone = ndb.StringProperty(indexed=False)
-    amount_deals = ndb.IntegerProperty(indexed=False)
-    tags = ndb.StringProperty(indexed=False)
+    name = ndb.StringProperty()
+    email = ndb.StringProperty()
+    phone = ndb.StringProperty()
+    amount_deals = ndb.IntegerProperty()
+    tags = ndb.StringProperty()
 
     @staticmethod
     def prepare_contact(contact_new, contact_json):
@@ -21,3 +22,20 @@ class Contact(ndb.Model):
     @staticmethod
     def get_contact(contact_id):
         return ndb.Key(urlsafe=contact_id).get()
+
+    @staticmethod
+    def make_fields_doc_index(contact):
+        fields = [
+            search.TextField(name='name', value=contact.name),
+            search.TextField(name='email', value=contact.email),
+            search.TextField(name='phone', value=contact.phone),
+            search.TextField(name='tags', value=contact.tags),
+            search.NumberField(name='amount_deals', value=contact.amount_deals)]
+        return fields
+
+    @staticmethod
+    def convert_index_search_in_contact(fields):
+        contact = {}
+        for field in fields:
+            contact[field.name] = field.value
+        return contact
