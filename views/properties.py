@@ -38,11 +38,19 @@ class Properties(BaseRequest):
     def put(self, property_id):
         property = Property.get_property(property_id)
         property_json = json.loads(self.request.body)['property']
-        Property.prepare_property(property, property_json).put()
+        property_new = Property.prepare_property(property, property_json).put()
+
+        try:
+            doc = search.Document(doc_id=property_id, fields=Property.make_fields_doc_index(property_new))
+            search.Index(name='Properties', namespace='ac-abc123').put(doc)
+        except search.Error:
+            pass
 
         self.response_write('Success')
 
     def delete(self, property_id):
         property = Property.prepare_property(property_id)
+        index = search.Index(name='properties', namespace='ac-abc123')
+        index.delete(property_id)
         property.key.delete()
         self.response_write('Success')

@@ -26,15 +26,13 @@ class Contacts(BaseRequest):
 
     def get(self, contact_id=None):
         if contact_id:
-            self.response_write(Contact.get_contact(contact_id))
+            self.response_write(self.prepare_json_contact(Contact.get_contact(contact_id)))
         elif self.request.get('search_text'):
             self.search_get(self.request.get('search_text'))
         else:
             contacts = []
             for contact in Contact.query(namespace='ac-abc123').fetch():
-                contact.db_id = contact.key.urlsafe()
-                contact.amount_deals = 2
-                contacts.append(contact.to_dict())
+                contacts.append(self.prepare_json_contact(contact))
             self.response_write(contacts)
 
     def put(self, contact_id=None):
@@ -71,3 +69,23 @@ class Contacts(BaseRequest):
             self.response_write(contacts)
         except search.Error:
             print(search.Error)
+
+    @staticmethod
+    def prepare_json_contact(contact):
+        contact_json = {
+            'db_id': contact.key.urlsafe(),
+            'amount_deals': 2,
+            'tags': 'Owner',
+            'name': contact.name,
+            'email': contact.email,
+            'phone': contact.phone,
+            'profile': {
+                'neighborhood': contact.neighborhood,
+                'value': contact.value,
+                'vacancies': contact.vacancies,
+                'bedrooms': contact.bedrooms,
+                'bathrooms': contact.bathrooms,
+                'area': contact.area
+            }
+        }
+        return contact_json
