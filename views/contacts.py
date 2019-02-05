@@ -65,7 +65,9 @@ class Contacts(BaseRequest):
                     limit=10))
             search_results = index.search(search_query)
             for doc in search_results:
-                contacts.append(Contact.convert_index_search_in_contact(doc.fields))
+                contact_new = Contact.convert_index_search_in_contact(doc.fields)
+                contact_new['db_id'] = doc.doc_id
+                contacts.append(contact_new)
             self.response_write(contacts)
         except search.Error:
             print(search.Error)
