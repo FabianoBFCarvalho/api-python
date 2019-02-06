@@ -11,6 +11,7 @@ class ContactsSearch(BaseRequest):
         contacts = []
         querystring = self.prepare_query_profile()
         print(querystring)
+
         index = search.Index(name='contacts', namespace='ac-abc123')
         search_query = search.Query(
             query_string=querystring,
@@ -19,7 +20,9 @@ class ContactsSearch(BaseRequest):
         try:
             search_results = index.search(search_query)
             for doc in search_results:
-                contacts.append(Contact.convert_index_search_in_contact(doc.fields))
+                contact = Contact.convert_index_search_in_contact(doc.fields)
+                contact['db_id'] = doc.doc_id
+                contacts.append(contact)
             response = {
                 "contacts": contacts,
                 "count": search_results.number_found

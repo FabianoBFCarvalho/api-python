@@ -5,7 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7aabaaeb-f158-46a4-bbf3-d8e03abca3bd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/views/contacts.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/contacts.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/contacts_search_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/properties_search_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/base_request.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/base_request.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/contact.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/contact.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/deal.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/deal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/contacts_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/contacts_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/deals_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/deals_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/properties_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/properties_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/contacts_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/contacts_search.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/deals.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/deals.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/properties.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/properties.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/properties_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/properties_search.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,58 +33,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/property.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
+            <state relative-caret-position="795">
+              <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/deal.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="71" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="71" />
-              <folding>
-                <element signature="e#0#36#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="42" lean-forward="true" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/contact.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="577">
-              <caret line="58" column="22" selection-start-line="58" selection-start-column="15" selection-end-line="58" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#36#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/deals.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -81,8 +45,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/contacts_search.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="55" lean-forward="true" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
+            <state relative-caret-position="345">
+              <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="45" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -91,34 +55,82 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/base_request.py">
+        <entry file="file://$PROJECT_DIR$/views/properties.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="581">
-              <caret line="46" column="81" lean-forward="true" selection-start-line="46" selection-start-column="81" selection-end-line="46" selection-end-column="81" />
+            <state relative-caret-position="723">
+              <caret line="52" column="53" lean-forward="true" selection-start-line="52" selection-start-column="53" selection-end-line="52" selection-end-column="53" />
               <folding>
-                <element signature="e#0#14#0" expanded="true" />
+                <element signature="e#0#11#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/properties_search.py">
+        <entry file="file://$PROJECT_DIR$/tests/contacts_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+            <state relative-caret-position="318">
+              <caret line="40" column="26" lean-forward="true" selection-end-line="60" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/contacts.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="467">
+              <caret line="68" column="16" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="49" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/contact.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="333">
+              <caret line="40" selection-start-line="40" selection-end-line="50" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/contacts_search_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="35" column="59" lean-forward="true" selection-start-line="35" selection-start-column="59" selection-end-line="35" selection-end-column="59" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/properties_search_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="36" column="57" lean-forward="true" selection-start-line="36" selection-start-column="57" selection-end-line="36" selection-end-column="57" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/contacts.py">
+        <entry file="file://$PROJECT_DIR$/views/properties_search.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="65" column="55" lean-forward="true" selection-start-line="65" selection-start-column="55" selection-end-line="65" selection-end-column="55" />
+            <state relative-caret-position="315">
+              <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -154,9 +166,9 @@
       <find>AppTest</find>
       <find>contact</find>
       <find>webtest</find>
-      <find>print</find>
       <find>contact_id</find>
       <find>json</find>
+      <find>print</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -186,22 +198,26 @@
         <option value="$PROJECT_DIR$/tests/contact_test.py" />
         <option value="$PROJECT_DIR$/views/contact.py" />
         <option value="$PROJECT_DIR$/tests/property_test.py" />
-        <option value="$PROJECT_DIR$/tests/deals_test.py" />
-        <option value="$PROJECT_DIR$/tests/properties_test.py" />
-        <option value="$PROJECT_DIR$/tests/contacts_test.py" />
         <option value="$PROJECT_DIR$/views/deal.py" />
         <option value="$PROJECT_DIR$/views/property.py" />
-        <option value="$PROJECT_DIR$/views/deals.py" />
-        <option value="$PROJECT_DIR$/models/deal.py" />
-        <option value="$PROJECT_DIR$/models/property.py" />
-        <option value="$PROJECT_DIR$/views/properties.py" />
         <option value="$PROJECT_DIR$/views/contacts_serach.py" />
         <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/models/contact.py" />
-        <option value="$PROJECT_DIR$/controller/base_request.py" />
-        <option value="$PROJECT_DIR$/views/properties_search.py" />
-        <option value="$PROJECT_DIR$/views/contacts_search.py" />
         <option value="$PROJECT_DIR$/views/contacts.py" />
+        <option value="$PROJECT_DIR$/models/contact.py" />
+        <option value="$PROJECT_DIR$/mocks/mocks.py" />
+        <option value="$PROJECT_DIR$/tests/contacts_test.py" />
+        <option value="$PROJECT_DIR$/models/deal.py" />
+        <option value="$PROJECT_DIR$/views/deals.py" />
+        <option value="$PROJECT_DIR$/tests/deals_test.py" />
+        <option value="$PROJECT_DIR$/models/property.py" />
+        <option value="$PROJECT_DIR$/tests/properties_test.py" />
+        <option value="$PROJECT_DIR$/views/properties.py" />
+        <option value="$PROJECT_DIR$/tests/contacts_serach_test.py" />
+        <option value="$PROJECT_DIR$/controller/base_request.py" />
+        <option value="$PROJECT_DIR$/tests/properties_search_test.py" />
+        <option value="$PROJECT_DIR$/tests/contacts_search_test.py" />
+        <option value="$PROJECT_DIR$/views/contacts_search.py" />
+        <option value="$PROJECT_DIR$/views/properties_search.py" />
       </list>
     </option>
   </component>
@@ -225,12 +241,12 @@
             <path>
               <item name="api-python" type="b2602c69:ProjectViewProjectNode" />
               <item name="api-python" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="api-python" type="b2602c69:ProjectViewProjectNode" />
               <item name="api-python" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="api-python" type="b2602c69:ProjectViewProjectNode" />
@@ -409,11 +425,11 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1600" height="873" extended-state="6" />
+    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.10735294" side_tool="true" weight="0.18133895" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.8926471" visible="true" weight="0.18072289" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.8926471" visible="true" weight="0.15023722" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -548,17 +564,28 @@
     <entry file="file://$PROJECT_DIR$/views/property.py" />
     <entry file="file://$PROJECT_DIR$/views/deal.py" />
     <entry file="file://$PROJECT_DIR$/tests/property_test.py" />
-    <entry file="file://$PROJECT_DIR$/tests/properties_test.py">
+    <entry file="file://$PROJECT_DIR$/models/profile.py" />
+    <entry file="file://$PROJECT_DIR$/mocks/mocks.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="6" selection-start-column="6" selection-end-column="6" />
+        <state relative-caret-position="150">
+          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/contacts_test.py">
+    <entry file="file://$PROJECT_DIR$/models/deal.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="24" column="62" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
+        <state relative-caret-position="345">
+          <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/properties_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
@@ -567,33 +594,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/deals_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
+        <state relative-caret-position="487">
+          <caret line="48" column="56" selection-start-line="48" selection-start-column="56" selection-end-line="48" selection-end-column="56" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/profile.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/properties.py">
+    <entry file="file://$PROJECT_DIR$/views/deals.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="35" column="57" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="57" />
+        <state relative-caret-position="292">
+          <caret line="37" column="37" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="37" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/property.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -601,7 +615,7 @@
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="11" column="42" lean-forward="true" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="24" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
@@ -610,58 +624,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/base_request.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="581">
-          <caret line="46" column="81" lean-forward="true" selection-start-line="46" selection-start-column="81" selection-end-line="46" selection-end-column="81" />
+        <state relative-caret-position="437">
+          <caret line="37" column="40" lean-forward="true" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/contacts_search.py">
+    <entry file="file://$PROJECT_DIR$/tests/contacts_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="55" lean-forward="true" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
+        <state relative-caret-position="318">
+          <caret line="40" column="26" lean-forward="true" selection-end-line="60" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/deal.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="71" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="71" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/deals.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/models/contact.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="577">
-          <caret line="58" column="22" selection-start-line="58" selection-start-column="15" selection-end-line="58" selection-end-column="22" />
+        <state relative-caret-position="333">
+          <caret line="40" selection-start-line="40" selection-end-line="50" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/properties_search.py">
+    <entry file="file://$PROJECT_DIR$/views/properties.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        <state relative-caret-position="723">
+          <caret line="52" column="53" lean-forward="true" selection-start-line="52" selection-start-column="53" selection-end-line="52" selection-end-column="53" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
@@ -670,8 +664,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/contacts.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="65" column="55" lean-forward="true" selection-start-line="65" selection-start-column="55" selection-end-line="65" selection-end-column="55" />
+        <state relative-caret-position="467">
+          <caret line="68" column="16" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/contacts_search_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="59" lean-forward="true" selection-start-line="35" selection-start-column="59" selection-end-line="35" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/properties_search_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="57" lean-forward="true" selection-start-line="36" selection-start-column="57" selection-end-line="36" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/property.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/contacts_search.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/properties_search.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>

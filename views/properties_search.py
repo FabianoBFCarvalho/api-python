@@ -18,7 +18,9 @@ class PropertiesSearch(BaseRequest):
         try:
             search_results = index.search(search_query)
             for doc in search_results:
-                properties.append(Property.convert_index_in_property(doc.fields))
+                property = Property.convert_index_in_property(doc.fields)
+                property['db_id'] = doc.doc_id
+                properties.append(property)
 
             response = {
                 "properties": properties,

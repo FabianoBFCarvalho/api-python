@@ -15,13 +15,14 @@ class Deal(ndb.Model):
 
     @staticmethod
     def prepare_deal(deal_new, deal_json):
-
         deal_new.value = deal_json.get('value')
         deal_new.title = deal_json.get('title')
         deal_new.interest = deal_json.get('interest')
         deal_new.status = deal_json.get('status')
-        deal_new.contact_id = ndb.Key(urlsafe=deal_json.get('contact_id'))
-        deal_new.property_id = ndb.Key(urlsafe=deal_json.get('property_id'))
+        if deal_json.get('contact_id'):
+            deal_new.contact_id = ndb.Key(urlsafe=deal_json.get('contact_id'))
+        if deal_json.get('property_id'):
+            deal_new.property_id = ndb.Key(urlsafe=deal_json.get('property_id'))
 
         return deal_new
 

@@ -41,7 +41,6 @@ class Deals(BaseRequest):
         deal = Deal.get_deal(deal_id)
         deal_json = json.loads(self.request.body)['deal']
         Deal.prepare_deal(deal, deal_json).put()
-
         self.response_write('Success')
 
     def delete(self, deal_id):
@@ -51,7 +50,6 @@ class Deals(BaseRequest):
 
     @staticmethod
     def prepare_contact(contact_key):
-        print(contact_key)
         if contact_key:
             return contact_key.get()
         else:

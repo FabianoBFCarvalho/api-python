@@ -46,5 +46,4 @@ class BaseRequest(webapp2.RequestHandler):
         if self.request.get('neighborhood'):
             query += "neighborhood=" + self.request.get('neighborhood') + " AND "
 
-        print(query)
         return query[:len(query)-5]

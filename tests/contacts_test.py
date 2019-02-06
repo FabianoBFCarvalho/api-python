@@ -15,15 +15,23 @@ class AppTest(unittest.TestCase):
         self.testbed = testbed.Testbed()
         self.testbed.activate()
         self.testbed.init_datastore_v3_stub()
+        self.testbed.init_search_stub()
         self.testbed.init_memcache_stub()
 
     def tearDown(self):
         self.testbed.deactivate()
 
     def test_post(self):
-        params = {"contact": {"name": "Fabiano", "email": "google.com"}}
+        params = {"contact": {"name": "Fabiano", "email": "google.com", "profile": {
+            'neighborhood': 'Prainha',
+            'bedrooms': '1',
+            'bathrooms': '1',
+            'vacancies':  '1',
+            'area': '1',
+            'value': '1',
+        }}}
         response = self.testapp.post_json('/contacts', params)
-        self.assertEqual(json.loads(response.body)['db_id'], 'agx0ZXN0YmVkLXRlc3RyDQsSB0NvbnRhY3QYAQyiAQlhYy1hYmMxMjM')
+        self.assertEqual(response.status_code, 200)
 
     def test_get(self):
         Contact(namespace="ac-abc123", name="Fabiano").put()
@@ -32,7 +40,14 @@ class AppTest(unittest.TestCase):
 
     def test_update(self):
         contact_key = Contact(namespace="ac-abc123", name="Fabiano").put()
-        params = {"contact": {"name": "Eduardo", "email": "google.com"}}
+        params = {"contact": {"name": "Eduardo","profile": {
+            'neighborhood': 'Prainha',
+            'bedrooms': '1',
+            'bathrooms': '1',
+            'vacancies':  '1',
+            'area': '1',
+            'value': '1',
+        }}}
         response = self.testapp.put_json('/contacts/' + contact_key.urlsafe(), params)
         self.assertEqual(json.loads(response.body), 'Success')
 

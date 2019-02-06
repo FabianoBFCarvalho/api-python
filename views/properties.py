@@ -25,7 +25,7 @@ class Properties(BaseRequest):
 
     def get(self, property_id):
         if property_id:
-            self.response_write(Property.prepare_property(property_id))
+            self.response_write(Property.get_property(property_id).to_dict())
         else:
             properties = []
             for prop in Property.query(namespace='ac-abc123').fetch():
@@ -38,7 +38,8 @@ class Properties(BaseRequest):
     def put(self, property_id):
         property = Property.get_property(property_id)
         property_json = json.loads(self.request.body)['property']
-        property_new = Property.prepare_property(property, property_json).put()
+        property_new = Property.prepare_property(property, property_json)
+        property_new.put()
 
         try:
             doc = search.Document(doc_id=property_id, fields=Property.make_fields_doc_index(property_new))
@@ -49,7 +50,7 @@ class Properties(BaseRequest):
         self.response_write('Success')
 
     def delete(self, property_id):
-        property = Property.prepare_property(property_id)
+        property = Property.get_property(property_id)
         index = search.Index(name='properties', namespace='ac-abc123')
         index.delete(property_id)
         property.key.delete()

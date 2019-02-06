@@ -21,14 +21,14 @@ class Contact(ndb.Expando):
         contact_new.name = contact_json.get('name')
         contact_new.email = contact_json.get('email')
         contact_new.phone = contact_json.get('phone')
+        contact_new.amount_deals = 2
+        contact_new.tags = 'owner'
         contact_new.neighborhood = contact_json.get('profile')['neighborhood']
         contact_new.bedrooms = int(contact_json.get('profile')['bedrooms'])
         contact_new.vacancies = int(contact_json.get('profile')['vacancies'])
         contact_new.bathrooms = int(contact_json.get('profile')['bathrooms'])
         contact_new.area = int(contact_json.get('profile')['area'])
         contact_new.value = int(contact_json.get('profile')['value'])
-        contact_new.amount_deals = 2
-        contact_new.tags = 'owner'
         return contact_new
 
     @staticmethod
