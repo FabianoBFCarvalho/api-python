@@ -11,8 +11,8 @@ class Contacts(BaseRequest):
         contact_new = Contact(namespace='ac-abc123')
 
         contact_key = Contact.prepare_contact(contact_new, contact_json).put()
-        search.Index(name='contacts', namespace='ac-abc123')
 
+        search.Index(name='contacts', namespace='ac-abc123')
         doc = search.Document(doc_id=contact_key.urlsafe(), fields=Contact.make_fields_doc_index(
             Contact.get_contact(contact_key.urlsafe())))
 

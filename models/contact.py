@@ -1,5 +1,6 @@
 from google.appengine.ext import ndb
 from google.appengine.api import search
+from storage.bucket import Bucket
 
 
 class Contact(ndb.Expando):
@@ -9,6 +10,7 @@ class Contact(ndb.Expando):
     phone = ndb.StringProperty()
     amount_deals = ndb.IntegerProperty()
     tags = ndb.StringProperty()
+    image = ndb.StringProperty()
     neighborhood = ndb.StringProperty()
     bedrooms = ndb.IntegerProperty()
     bathrooms = ndb.IntegerProperty()
@@ -18,6 +20,12 @@ class Contact(ndb.Expando):
 
     @staticmethod
     def prepare_contact(contact_new, contact_json):
+
+        if contact_json.get('profile_image'):
+            image_url = Bucket.upload_blob('my_bucket', 'ac-abc123/contacts/' + 'image',
+                                           contact_json.get('profile_image'))
+            contact_new.image = image_url
+
         contact_new.name = contact_json.get('name')
         contact_new.email = contact_json.get('email')
         contact_new.phone = contact_json.get('phone')
@@ -42,6 +50,7 @@ class Contact(ndb.Expando):
             search.TextField(name='email', value=contact.email),
             search.TextField(name='phone', value=contact.phone),
             search.TextField(name='tags', value=contact.tags),
+            search.TextField(name='image', value=contact.image),
             search.TextField(name='neighborhood', value=contact.neighborhood),
             search.NumberField(name='bedrooms', value=contact.bedrooms),
             search.NumberField(name='bathrooms', value=contact.bathrooms),
