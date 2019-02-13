@@ -1,4 +1,4 @@
-#!/home/dev/api-python/env/bin/python2.7
+#!/home/dev/env/bin/python2
 # -*- coding: utf-8 -*-
 import re
 import sys

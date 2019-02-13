@@ -4,9 +4,7 @@ threadsafe: true
 
 # [START handlers]
 handlers:
-- url: /favicon\.ico
-  static_files: favicon.ico
-  upload: favicon\.ico
+
 
 - url: /blobstore.*
   script: blobstore.app
@@ -14,11 +12,7 @@ handlers:
 - url: /.*
   script: main.app
 
-- url: /bootstrap
-  static_dir: bootstrap
 
-- url: /.*
-  script: main.app
 # [END handlers]
 
 # [START libraries]

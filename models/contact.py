@@ -22,8 +22,8 @@ class Contact(ndb.Expando):
     def prepare_contact(contact_new, contact_json):
 
         if contact_json.get('profile_image'):
-            image_url = Bucket.upload_blob('my_bucket', 'ac-abc123/contacts/' + 'image',
-                                           contact_json.get('profile_image'))
+            buck = Bucket()
+            image_url = buck.create_file(contact_json.get('profile_image'))
             contact_new.image = image_url
 
         contact_new.name = contact_json.get('name')
