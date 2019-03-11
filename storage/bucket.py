@@ -3,9 +3,9 @@ import os
 import cloudstorage
 from google.appengine.api import app_identity
 import webapp2
-import googleapiclient.discovery
 import googleapiclient.http
 import base64
+
 storage = googleapiclient.discovery.build('storage', 'v1')
 
 
@@ -20,23 +20,27 @@ class Bucket(webapp2.RequestHandler):
         return bucket_name
 
     def create_file(self, file):
-        # """Create a file."""
-        new_file = base64.b64decode(file[22:])
-        print(file[22:])
-        print(new_file)
+        """
+        save file in storage
+        :param file:
+        :return: path_url
 
-        filename = '/' + self.get() + '/image.png'
-        self.tmp_filenames_to_clean_up = []
-        # self.response.write('Creating file {}\n'.format(filename))
+        """
+        # new_file = base64.b64decode(file[22:])
+        # new_file = base64.rpartition(',')[2]
 
-        # The retry_params specified in the open call will override the default
-        # retry params for this particular file handle.
-        write_retry_params = cloudstorage.RetryParams(backoff_factor=2)
-        with cloudstorage.open(
-                filename, 'w', content_type='image/png',
-                retry_params=write_retry_params) as cloudstorage_file:
-                    cloudstorage_file.write(new_file)
-                    cloudstorage_file.close()
-        self.tmp_filenames_to_clean_up.append(filename)
-        # return ''
+        print("*******************************************************")
+        print(file)
+
+        # print(new_file)
+
+        path_url = '/' + self.get() + '/image'
+
+        storage_file = cloudstorage.open(path_url, 'w', content_type='image/jpeg')
+        storage_file.write(file)
+        storage_file.close()
+
+        print('@@@@@@@@@@@@@@@@@@@  FINISH @@@@@@@@@@@@@@@@@@@@')
+
+        return path_url
 

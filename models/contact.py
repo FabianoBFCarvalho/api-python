@@ -18,13 +18,11 @@ class Contact(ndb.Expando):
     area = ndb.IntegerProperty()
     value = ndb.IntegerProperty()
 
-    @staticmethod
-    def prepare_contact(contact_new, contact_json):
+    @classmethod
+    def prepare_contact(cls, contact_new, contact_json):
 
-        if contact_json.get('profile_image'):
-            buck = Bucket()
-            image_url = buck.create_file(contact_json.get('profile_image'))
-            contact_new.image = image_url
+        # if contact_json.get('profile_image'):
+        #     contact_new.image = self.prepare_photo
 
         contact_new.name = contact_json.get('name')
         contact_new.email = contact_json.get('email')
@@ -66,3 +64,16 @@ class Contact(ndb.Expando):
         for field in fields:
             contact[field.name] = field.value
         return contact
+
+    @staticmethod
+    def prepare_photo(profile_image):
+        """
+        create the image in bucket and return url
+        :param profile_image:
+        :return: image_url
+        """
+        print('------------prepare_photo--------------')
+        buck = Bucket()
+        image_url = buck.create_file(profile_image)
+        return image_url
+
